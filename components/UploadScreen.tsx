@@ -47,15 +47,19 @@ export function UploadScreen({
             alt=""
             className="relative h-21 w-21 rounded-full object-cover lg:h-30 lg:w-30"
           />
-          {ORBIT_BADGES.map(({ Icon, left, top }, i) => (
-            <span
-              key={i}
-              className="absolute flex h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-linear-to-br from-[#fb975d] to-[#fc5e24]"
-              style={{ left, top }}
-            >
-              <Icon size={7} className="text-white" strokeWidth={2.5} />
-            </span>
-          ))}
+          {/* The 4 badges orbit as one rigid group — the whole cluster spins
+              continuously, rather than each icon rotating in place. */}
+          <div className="absolute inset-0 animate-orbit-spin">
+            {ORBIT_BADGES.map(({ Icon, left, top }, i) => (
+              <span
+                key={i}
+                className="absolute flex h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-linear-to-br from-[#fb975d] to-[#fc5e24]"
+                style={{ left, top }}
+              >
+                <Icon size={7} className="text-white" strokeWidth={2.5} />
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* This wrapping panel is itself a translucent white card (50%

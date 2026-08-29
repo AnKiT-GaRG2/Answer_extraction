@@ -91,3 +91,11 @@ body {
 .animate-sparkle-pulse {
   animation: sparkle-pulse 1.6s ease-in-out infinite;
 }
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-orbit-spin {
+  animation: orbit-spin 12s linear infinite;
+}
