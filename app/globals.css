@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f5f5;
+  --foreground: #2b2b2b;
+
+  --color-ink: #2b2b2b;
+  --color-ink-soft: #5e5e5e;
+  --color-paper: #f5f5f5;
+  --color-card: #ffffff;
+  --color-border: #cecece;
+
+  --color-accent: #ff5623;
+  --color-accent-soft: #ff9350;
+  --color-accent-dark: #ff5623;
+
+  --color-good: #2f9e44;
+  --color-good-soft: #e3f5e1;
+  --color-bad: #e03131;
+  --color-bad-soft: #fdeaea;
+
+  --color-highlight: #34c759;
+  --color-highlight-soft: rgba(52, 199, 89, 0.16);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-paper: var(--color-paper);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-good: var(--color-good);
+  --color-good-soft: var(--color-good-soft);
+  --color-bad: var(--color-bad);
+  --color-bad-soft: var(--color-bad-soft);
+  --color-highlight: var(--color-highlight);
+  --color-highlight-soft: var(--color-highlight-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* The design's type scale uses -4% tracking almost universally (measured
+     across headings, body copy, buttons, and captions) — applying it once
+     here instead of on every text element. A couple of prominent labels
+     (the VedaAI wordmark, empty-state upload prompts) use -6% instead and
+     override this locally. */
+  letter-spacing: -0.04em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cecece;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes region-pulse {
+  0% { box-shadow: 0 0 0 0 var(--color-highlight-soft); }
+  70% { box-shadow: 0 0 0 8px rgba(52, 199, 89, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); }
+}
+.animate-region-pulse {
+  animation: region-pulse 1s ease-out 2;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.animate-shimmer {
+  animation: shimmer 2.5s linear infinite;
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.75; }
+}
+.animate-sparkle-pulse {
+  animation: sparkle-pulse 1.6s ease-in-out infinite;
+}
