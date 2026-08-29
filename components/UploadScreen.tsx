@@ -7,6 +7,8 @@ import { FileDropCard } from './FileDropCard';
 // Four tiny orbiting badges scattered around the avatar circle's edge —
 // position is each badge's own center, as % of the circle's box, taken from
 // the design file's absolute coordinates (not evenly spaced compass points).
+// This lands them right at the light/saturated ring boundary — correct as
+// long as the ring widths below stay close to the measured proportions.
 const ORBIT_BADGES = [
   { Icon: SquareCheck, left: '13.3%', top: '37.7%' },
   { Icon: CloudLightning, left: '85.9%', top: '64.8%' },
@@ -26,7 +28,7 @@ export function UploadScreen({
 
   return (
     <div className="flex flex-1 flex-col items-center overflow-auto px-4 py-10 lg:px-8">
-      <div className="m-auto w-full max-w-4xl text-center">
+      <div className="m-auto w-full max-w-5xl text-center">
         <h1 className="text-[28px] font-bold leading-9 text-ink lg:whitespace-nowrap lg:text-[40px] lg:leading-12">
           Upload{' '}
           <span className="text-ink lg:rounded-lg lg:bg-[rgba(255,147,80,0.15)] lg:px-2 lg:py-1 lg:text-accent-dark lg:underline lg:decoration-2 lg:underline-offset-4">
@@ -39,13 +41,13 @@ export function UploadScreen({
             (10% and 26% opacity in the source), not a solid orange fill —
             layered under a plain white disc that the photo sits on. */}
         <div className="relative mx-auto mt-6 flex h-28 w-28 items-center justify-center rounded-full bg-[rgba(255,86,35,0.10)] lg:mt-8 lg:h-40 lg:w-40">
-          <div className="absolute inset-1 rounded-full bg-[rgba(255,86,35,0.26)] lg:inset-2" />
-          <div className="absolute inset-3 rounded-full bg-white lg:inset-4" />
+          <div className="absolute inset-3 rounded-full bg-[rgba(255,86,35,0.26)] lg:inset-4" />
+          <div className="absolute inset-6 rounded-full bg-white lg:inset-9" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/teacher-illustration.png"
             alt=""
-            className="relative h-21 w-21 rounded-full object-cover lg:h-30 lg:w-30"
+            className="relative h-18 w-18 rounded-full object-contain lg:h-24 lg:w-24"
           />
           {/* The 4 badges orbit as one rigid group — the whole cluster spins
               continuously, rather than each icon rotating in place. */}
