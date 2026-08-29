@@ -31,7 +31,7 @@ export function UploadScreen({
       <div className="m-auto w-full max-w-5xl text-center">
         <h1 className="text-[28px] font-bold leading-9 text-ink lg:whitespace-nowrap lg:text-[40px] lg:leading-12">
           Upload{' '}
-          <span className="text-ink lg:rounded-lg lg:bg-[rgba(255,147,80,0.15)] lg:px-2 lg:py-1 lg:text-accent-dark lg:underline lg:decoration-2 lg:underline-offset-4">
+          <span className="text-ink">
             Question Paper &amp; Answer Sheets
           </span>
         </h1>

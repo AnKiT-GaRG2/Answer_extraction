@@ -89,7 +89,7 @@ export function FileDropCard({
             <Upload size={20} className="text-ink" />
           </span>
           <span className="text-xl font-semibold tracking-[-0.06em] text-ink">
-            Upload <span className="text-accent underline decoration-2 underline-offset-2">{highlightedWord}</span>
+            Upload <span className="text-accent">{highlightedWord}</span>
           </span>
           <span className="text-sm tracking-[-0.06em] text-ink-soft/55">Max 10MB</span>
         </button>

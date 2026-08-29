@@ -4,6 +4,7 @@ import { useState, type ReactNode } from 'react';
 import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 import { MobileDrawer } from './MobileDrawer';
+import { ClickSparkEffect } from './ClickSparkEffect';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -24,6 +25,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           'linear-gradient(180deg, #f5f5f5 0%, #e2dede 100%)',
       }}
     >
+      <ClickSparkEffect />
       <Sidebar />
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
       <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-3">
