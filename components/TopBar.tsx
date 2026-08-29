@@ -53,16 +53,14 @@ export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
         </button>
 
         <div className="hidden items-center gap-2 rounded-xl px-3 py-1.5 transition-colors duration-200 ease-out hover:bg-white lg:flex">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2b2b2b] text-xs font-bold text-white">
-            MR
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/madhur-avatar.png" alt="" className="h-8 w-8 shrink-0 rounded-full object-cover" />
           <span className="text-base font-semibold text-ink">Madhur Rastogi</span>
           <ChevronDown size={16} className="text-ink" />
         </div>
 
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2b2b2b] text-xs font-bold text-white lg:hidden">
-          MR
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/madhur-avatar.png" alt="Madhur Rastogi" className="h-8 w-8 shrink-0 rounded-full object-cover lg:hidden" />
 
         <button
           className="text-ink-soft hover:text-ink lg:hidden"
