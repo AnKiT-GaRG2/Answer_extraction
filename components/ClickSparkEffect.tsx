@@ -12,14 +12,16 @@ const SVG_SIZE = 60;
 const CENTER = SVG_SIZE / 2;
 const LIFETIME_MS = 1800; // matches the real site's element removal timing (measured ~1795-1845ms)
 
-// The exact 4 (dx, dy) offsets captured twice from the official site's own
-// click effect — identical both times, so this is a fixed pattern, not
-// randomized per click.
+// The 4 (dx, dy) offsets captured twice from the official site's own click
+// effect were identical both times, so this is a fixed pattern, not
+// randomized per click. Scaled up 2.5x from the raw captured values (which
+// only travel ~15px) so the burst reads clearly instead of looking tiny.
+const SCALE = 2.5;
 const SPARK_OFFSETS: [number, number][] = [
-  [10.6066, -10.6066],
-  [2.6047, -14.7721],
-  [-6.3393, -13.5946],
-  [-12.9904, -7.5],
+  [10.6066 * SCALE, -10.6066 * SCALE],
+  [2.6047 * SCALE, -14.7721 * SCALE],
+  [-6.3393 * SCALE, -13.5946 * SCALE],
+  [-12.9904 * SCALE, -7.5 * SCALE],
 ];
 
 let nextSparkId = 0;
@@ -62,7 +64,7 @@ export function ClickSparkEffect() {
               x2={CENTER}
               y2={CENTER}
               stroke="#000"
-              strokeWidth={2}
+              strokeWidth={5}
               strokeLinecap="square"
               className="animate-click-spark-line"
               style={{ '--spark-dx': `${dx}px`, '--spark-dy': `${dy}px` } as React.CSSProperties}

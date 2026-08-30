@@ -114,7 +114,7 @@ body {
    keeps the faded-out end state until the element is removed from the
    DOM (matched to the ~1.8s the real one stays mounted). */
 @keyframes click-spark-line {
-  0% { transform: translate(0, 0); stroke-width: 2; opacity: 1; }
+  0% { transform: translate(0, 0); stroke-width: 3; opacity: 1; }
   100% { transform: translate(var(--spark-dx), var(--spark-dy)); stroke-width: 0; opacity: 0; }
 }
 .animate-click-spark-line {
